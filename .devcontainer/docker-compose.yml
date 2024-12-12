@@ -13,5 +13,5 @@ services:
       # Bind mount source code
       - .:/home/vscode/workspace/zeus:cached
       # Mount shared VFX storage.
-      - /vfx:/vfx:rw
-      - /mnt/burrows:/mnt/burrows:rw
+      # - /vfx:/vfx:rw
+      # - /mnt/burrows:/mnt/burrows:rw
