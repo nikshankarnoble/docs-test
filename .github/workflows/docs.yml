@@ -30,6 +30,7 @@ jobs:
     - name: Build documentation
       working-directory: docs
       run: |
+        poetry install
         poetry run make html
 
     - name: Deploy to GitHub Pages
