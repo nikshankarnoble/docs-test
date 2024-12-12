@@ -1,0 +1,17 @@
+name: zeus-dev
+
+services:
+  zeus:
+    build:
+      target: dev
+    image: zeus-dev
+    container_name: zeus-dev
+    # Prevent the container from exiting after initialisation
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
+    volumes:
+      # Bind mount source code
+      - .:/home/vscode/workspace/zeus:cached
+      # Mount shared VFX storage.
+      - /vfx:/vfx:rw
+      - /mnt/burrows:/mnt/burrows:rw
