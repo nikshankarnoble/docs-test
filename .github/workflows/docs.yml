@@ -43,6 +43,7 @@ jobs:
         fi
         poetry install
         poetry run make -C docs html
+        mkdir -p docs_build
         mv docs/build/html "docs_build/$VERSION"
 
 
