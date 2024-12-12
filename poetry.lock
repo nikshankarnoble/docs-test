@@ -44,6 +44,17 @@ test = ["anyio[trio]", "coverage[toml] (>=7)", "exceptiongroup (>=1.2.0)", "hypo
 trio = ["trio (>=0.26.1)"]
 
 [[package]]
+name = "appdirs"
+version = "1.4.4"
+description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
+optional = false
+python-versions = "*"
+files = [
+    {file = "appdirs-1.4.4-py2.py3-none-any.whl", hash = "sha256:a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"},
+    {file = "appdirs-1.4.4.tar.gz", hash = "sha256:7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"},
+]
+
+[[package]]
 name = "attrs"
 version = "24.2.0"
 description = "Classes Without Boilerplate"
@@ -914,6 +925,29 @@ files = [
 typing-extensions = ">=4.6.0,<4.7.0 || >4.7.0"
 
 [[package]]
+name = "pydantic-extra-types"
+version = "2.10.1"
+description = "Extra Pydantic types."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "pydantic_extra_types-2.10.1-py3-none-any.whl", hash = "sha256:db2c86c04a837bbac0d2d79bbd6f5d46c4c9253db11ca3fdd36a2b282575f1e2"},
+    {file = "pydantic_extra_types-2.10.1.tar.gz", hash = "sha256:e4f937af34a754b8f1fa228a2fac867091a51f56ed0e8a61d5b3a6719b13c923"},
+]
+
+[package.dependencies]
+pydantic = ">=2.5.2"
+typing-extensions = "*"
+
+[package.extras]
+all = ["pendulum (>=3.0.0,<4.0.0)", "phonenumbers (>=8,<9)", "pycountry (>=23)", "python-ulid (>=1,<2)", "python-ulid (>=1,<4)", "pytz (>=2024.1)", "semver (>=3.0.2)", "semver (>=3.0.2,<3.1.0)", "tzdata (>=2024.1)"]
+pendulum = ["pendulum (>=3.0.0,<4.0.0)"]
+phonenumbers = ["phonenumbers (>=8,<9)"]
+pycountry = ["pycountry (>=23)"]
+python-ulid = ["python-ulid (>=1,<2)", "python-ulid (>=1,<4)"]
+semver = ["semver (>=3.0.2)"]
+
+[[package]]
 name = "pygments"
 version = "2.18.0"
 description = "Pygments is a syntax highlighting package written in Python."
@@ -1320,6 +1354,34 @@ sphinxcontrib-serializinghtml = ">=1.1.9"
 docs = ["sphinxcontrib-websupport"]
 lint = ["flake8 (>=6.0)", "mypy (==1.11.1)", "pyright (==1.1.384)", "pytest (>=6.0)", "ruff (==0.6.9)", "sphinx-lint (>=0.9)", "tomli (>=2)", "types-Pillow (==10.2.0.20240822)", "types-Pygments (==2.18.0.20240506)", "types-colorama (==0.4.15.20240311)", "types-defusedxml (==0.7.0.20240218)", "types-docutils (==0.21.0.20241005)", "types-requests (==2.32.0.20240914)", "types-urllib3 (==1.26.25.14)"]
 test = ["cython (>=3.0)", "defusedxml (>=0.7.1)", "pytest (>=8.0)", "setuptools (>=70.0)", "typing_extensions (>=4.9)"]
+
+[[package]]
+name = "sphinx-immaterial"
+version = "0.12.4"
+description = "Adaptation of mkdocs-material theme for the Sphinx documentation system"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "sphinx_immaterial-0.12.4-py3-none-any.whl", hash = "sha256:09224ad18a39204e0a05168e027d0b6af1b85be33c666c711092ae91229e6ac7"},
+    {file = "sphinx_immaterial-0.12.4.tar.gz", hash = "sha256:3b2128114040e96539cf4eaaa924b80bf4944af363e4e9954a6290fa7549aeaa"},
+]
+
+[package.dependencies]
+appdirs = "*"
+markupsafe = "*"
+pydantic = ">=2.4"
+pydantic-extra-types = "*"
+requests = "*"
+sphinx = ">=4.5"
+typing-extensions = "*"
+
+[package.extras]
+black = ["black"]
+clang-format = ["clang-format"]
+cpp = ["libclang"]
+json = ["pyyaml"]
+jsonschema-validation = ["jsonschema"]
+keys = ["pymdown-extensions"]
 
 [[package]]
 name = "sphinxcontrib-applehelp"
@@ -1734,4 +1796,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11.10"
-content-hash = "5829ccad615f36ed23b51f94a6961564021b3ae142d92a5607dd0985d7f99b67"
+content-hash = "4aea95c77de3d5eacd81071eaae84d22e2501c2a691cb07e84d7bd7fbe1aa08d"
