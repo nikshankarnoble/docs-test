@@ -31,3 +31,28 @@ exclude_patterns = []
 
 html_theme = "sphinx_immaterial"
 html_static_path = ["_static"]
+
+html_theme_options = {
+    "features": [
+        "navigation.expand",
+        "navigation.sections",
+        "navigation.instant",
+    ],
+    # "repo_url": "https://github.com/brechtm/rinohtype",
+    # "repo_name": "rinohtype",
+    # "repo_type": "github",
+    # "edit_uri": "edit/master/doc",
+    "palette": {
+        "media": "(prefers-color-scheme: dark)",
+        "scheme": "slate",
+        "primary": "indigo",
+        "accent": "yellow",
+        "toggle": {
+            "icon": "material/lightbulb",
+            "name": "Switch to light mode",
+        },
+    },
+    "toc_title_is_page_title": True,
+    "version_dropdown": True,
+    # 'version_json': '../im_versions.json',
+}
