@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
-
+    tags:
+      - "*"
+      
   workflow_dispatch:
   
 jobs:
@@ -32,14 +34,21 @@ jobs:
         virtualenvs-in-project: true
 
     - name: Build documentation
-      working-directory: docs
       run: |
+        git fetch --tags
+        if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+          VERSION=latest
+        else
+          VERSION=$(git describe --tags)
+        fi
         poetry install
-        poetry run make html
+        poetry run make -C docs html
+        mv docs/build/html "docs_build/$VERSION"
+
 
     - name: Deploy to GitHub Pages
       if: success()
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/build/html
+        publish_dir: docs_build
