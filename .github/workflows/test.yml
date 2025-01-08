@@ -1,0 +1,14 @@
+name: Echo True on PR to Main
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  echo-true:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echo True
+        run: echo true
